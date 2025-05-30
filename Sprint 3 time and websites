@@ -1,10 +1,14 @@
 
 1 Hour Research
 1 Hour setup Github as well as DB
-
+1 Hour setting up User input commands
 
 
 
 https://database.guide/create-a-database-in-sqlite/
 https://w3schools.tech/tutorial/sqlite/sqlite_create_database
 https://docs.python.org/3.8/library/sqlite3.html#sqlite3.Cursor
+https://www.w3schools.com/python/python_conditions.asp
+https://www.geeksforgeeks.org/clear-screen-python/#
+https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
+https://sibabalwesinyaniso.medium.com/select-retrieve-data-from-sqlite-efficiently-30ed4ae5920a
