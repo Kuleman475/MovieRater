@@ -73,10 +73,54 @@ while(userInput != "5"):
         cur.execute("INSERT INTO movies (name, rating, stars) VALUES (?, ?, ?)", (userAddName, userAddRating, userAddStars))
         con.commit()
         print("Movie Added")
+
 ###############    MODIFY Database    #######################
     
     elif userInput == "3":
-        print("EDIT EXISTING MOVIE")
+        userMovieModify = ""
+        print("1. Find by ID")
+        print("2. Find by Title ")
+        userModify = input("Your Choice: ")
+        if userModify == "1":
+            userMovieModify = input("What is the ID?: ")
+            print("What do you want to edit?: ")
+            print("1. Movie Name")
+            print("2. Movie Rating")
+            print("3. Movie Stars")
+            userEdit = input("Your choice to Edit: ")
+            if userEdit == "1":
+                userNewName = input("Update Name: ")
+                cur.execute("UPDATE movies SET name = ? WHERE movie_id = ?", (userNewName, userMovieModify,))
+            
+            elif userEdit == "2":
+                userNewRating = input("Update Rating: ")
+                cur.execute("UPDATE movies SET rating = ? WHERE movie_id = ?", (userNewRating, userMovieModify,))
+
+            elif userEdit == "3":
+                UserNewStars = input("Update Stars: ")
+                cur.execute("UPDATE movies SET stars = ? WHERE movie_id = ?", (UserNewStars, userMovieModify))
+
+        else:
+            userMovieModify = input("What is the Title of the movie? ")
+            print("What do you want to edit?: ")
+            print("1. Movie Name")
+            print("2. Movie Rating")
+            print("3. Movie Stars")
+            userEdit = input("Your choice to Edit: ")
+            if userEdit == "1":
+                userNewName = input("Update Name: ")
+                cur.execute("UPDATE movies SET name = ? WHERE name = ?", (userNewName, userMovieModify,))
+            
+            elif userEdit == "2":
+                userNewRating = input("Update Rating: ")
+                cur.execute("UPDATE movies SET rating = ? WHERE name = ?", (userNewRating, userMovieModify,))
+
+            elif userEdit == "3":
+                UserNewStars = input("Update Stars: ")
+                cur.execute("UPDATE movies SET stars = ? WHERE name = ?", (UserNewStars, userMovieModify))
+
+        con.commit()
+        print("EXISTING MOVIE EDITED")
 
 ###########   DELETE Item from Database   ##################
     
