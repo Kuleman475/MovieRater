@@ -60,7 +60,7 @@ while(userInput != "5"):
             else:
                 print("OOPS incorrect value please choose 1-4")
 
-            time.sleep(5)
+            time.sleep(3)
 
 ###############    WRITE to Database    #####################
     
@@ -90,15 +90,15 @@ while(userInput != "5"):
             userEdit = input("Your choice to Edit: ")
             if userEdit == "1":
                 userNewName = input("Update Name: ")
-                cur.execute("UPDATE movies SET name = ? WHERE movie_id = ?", (userNewName, userMovieModify,))
+                cur.execute("UPDATE movies SET name = ? WHERE id = ?", (userNewName, userMovieModify,))
             
             elif userEdit == "2":
                 userNewRating = input("Update Rating: ")
-                cur.execute("UPDATE movies SET rating = ? WHERE movie_id = ?", (userNewRating, userMovieModify,))
+                cur.execute("UPDATE movies SET rating = ? WHERE id = ?", (userNewRating, userMovieModify,))
 
             elif userEdit == "3":
                 UserNewStars = input("Update Stars: ")
-                cur.execute("UPDATE movies SET stars = ? WHERE movie_id = ?", (UserNewStars, userMovieModify))
+                cur.execute("UPDATE movies SET stars = ? WHERE id = ?", (UserNewStars, userMovieModify))
 
         else:
             userMovieModify = input("What is the Title of the movie? ")
