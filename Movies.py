@@ -44,7 +44,7 @@ while(userInput != "5"):
     # READ Ratings        
             elif userRead == "2":
                 userReadRating = input("What Rating ('G' 'PG' 'PG-13'): ")
-                for row in cur.execute('SELECT name, rating, stars FROM movies WHERE rating = ?', (userReadRating,)):
+                for row in cur.execute('SELECT name, rating, stars FROM movies WHERE rating = ?', (userReadRating.upper(),)):
                     print(row)
     # READ Stars
             elif userRead == "3":
@@ -60,7 +60,6 @@ while(userInput != "5"):
             else:
                 print("OOPS incorrect value please choose 1-4")
 
-            time.sleep(3)
 
 ###############    WRITE to Database    #####################
     
@@ -70,7 +69,7 @@ while(userInput != "5"):
         userAddRating = input("Movie Rating (example: G, PG): ")
         userAddStars = input("Stars you give Movie 1-5: ")
 
-        cur.execute("INSERT INTO movies (name, rating, stars) VALUES (?, ?, ?)", (userAddName, userAddRating, userAddStars))
+        cur.execute("INSERT INTO movies (name, rating, stars) VALUES (?, ?, ?)", (userAddName.title(), userAddRating.upper(), userAddStars))
         con.commit()
         print("Movie Added")
 
@@ -150,4 +149,4 @@ while(userInput != "5"):
     
     else:
         print("OOPS You didn't put in a number 1-5 please put in a number.")
-    time.sleep(5)
+    time.sleep(1)
