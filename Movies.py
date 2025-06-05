@@ -30,7 +30,8 @@ while(userInput != "5"):
             print("1. All Movies")
             print("2. Movie Ratings")
             print("3. Stars You Gave")
-            print("4. Main Menu")
+            print("4. Average Number of Stars")
+            print("5. Main Menu")
         
             userRead = input("Your Choice: ")
             
@@ -40,6 +41,7 @@ while(userInput != "5"):
             if userRead == "1":
                 for row in cur.execute('SELECT id, name, rating, stars FROM movies'):
                     print(row)
+                
 
     # READ Ratings        
             elif userRead == "2":
@@ -52,8 +54,13 @@ while(userInput != "5"):
                 for row in cur.execute('SELECT name, rating, stars FROM movies WHERE stars = ?', (userReadStars,)):
                     print(row)
 
-    # QUIT to main menu
+    # AVERAGE Stars for Database
             elif userRead == "4":
+                cur.execute("SELECT ROUND(AVG(stars), 1) FROM movies")
+                userAverageStars = cur.fetchone()[0]
+                print("Average is", userAverageStars, "Stars")
+    # QUIT to main menu
+            elif userRead == "5":
                 print("Going to the Main Menu")
 
     # INVALID input
