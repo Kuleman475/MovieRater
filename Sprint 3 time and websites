@@ -4,6 +4,7 @@
 2.5 Hours setting up User input commands
 0.5 Hour Setting up Add to Table
 2.5 Hours Editing Data
+0.5 Hours Deleting Data
 
 
 
@@ -15,3 +16,4 @@ https://www.geeksforgeeks.org/clear-screen-python/#
 https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
 https://sibabalwesinyaniso.medium.com/select-retrieve-data-from-sqlite-efficiently-30ed4ae5920a
 https://www.sqlitetutorial.net/sqlite-update/
+https://www.sqlitetutorial.net/sqlite-delete/

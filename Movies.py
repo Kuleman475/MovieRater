@@ -38,7 +38,7 @@ while(userInput != "5"):
 
     # READ All movies 
             if userRead == "1":
-                for row in cur.execute('SELECT name, rating, stars FROM movies'):
+                for row in cur.execute('SELECT id, name, rating, stars FROM movies'):
                     print(row)
 
     # READ Ratings        
@@ -125,7 +125,20 @@ while(userInput != "5"):
 ###########   DELETE Item from Database   ##################
     
     elif userInput == "4":
-        print("DELETE MOVIE")
+        print("1. Delete by ID")
+        print("2. Delete by Title")
+        print("3. Quit")
+        userDelete = input("Your Choice: ")
+        userDeleteMovie = ""
+
+        if userDelete == "1":
+            userDeleteMovie = input("ID: ")
+            cur.execute("DELETE FROM movies WHERE id = ?", (userDeleteMovie,))
+        elif userDelete == "2":
+            userDeleteMovie = input("Title: ")
+            cur.execute("DELETE FROM movies WHERE name = ?", (userDeleteMovie,))
+        
+        con.commit()
 
 ########################  QUIT  ###########################
     
