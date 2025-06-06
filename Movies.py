@@ -30,8 +30,8 @@ while(userInput != "5"):
             print("1. All Movies")
             print("2. Movie Ratings")
             print("3. Stars You Gave")
-            print("4. Average Number of Stars")
-            print("5. Main Menu")
+            print("4. Fun Facts about your Database")
+            print("5. Quit")
         
             userRead = input("Your Choice: ")
             
@@ -40,8 +40,7 @@ while(userInput != "5"):
     # READ All movies 
             if userRead == "1":
                 for row in cur.execute('SELECT id, name, rating, stars FROM movies'):
-                    print(row)
-                
+                    print(row)                
 
     # READ Ratings        
             elif userRead == "2":
@@ -59,6 +58,17 @@ while(userInput != "5"):
                 cur.execute("SELECT ROUND(AVG(stars), 1) FROM movies")
                 userAverageStars = cur.fetchone()[0]
                 print("Average is", userAverageStars, "Stars")
+            # NUMBER of Ratings
+                cur.execute("SELECT COUNT(*) FROM movies WHERE rating = ?", ("G",))
+                ratingG = cur.fetchone()[0]
+                cur.execute("SELECT COUNT(*) FROM movies WHERE rating = ?", ("PG",))
+                ratingPG = cur.fetchone()[0]
+                cur.execute("SELECT COUNT(*) FROM movies WHERE rating = ?", ("PG-13",))
+                ratingPG13 = cur.fetchone()[0]
+                print("The amount of G rated movies is:", ratingG)
+                print("The amount of PG rated movies is:", ratingPG)
+                print("The amount of PG-13 rated movies is:", ratingPG13)
+
     # QUIT to main menu
             elif userRead == "5":
                 print("Going to the Main Menu")
