@@ -26,7 +26,7 @@ while(userInput != "5"):
     if userInput == "1":
         print("How would you like to See the Data?")
         userRead = ""
-        while(userRead != "4"):
+        while(userRead != "5"):
             print("1. All Movies")
             print("2. Movie Ratings")
             print("3. Stars You Gave")
@@ -75,7 +75,7 @@ while(userInput != "5"):
 
     # INVALID input
             else:
-                print("OOPS incorrect value please choose 1-4")
+                print("OOPS incorrect value please choose 1-5")
 
 
 ###############    WRITE to Database    #####################

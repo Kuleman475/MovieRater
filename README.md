@@ -4,9 +4,8 @@ The software I wrote is a database for movies I have watched and rated them on w
 
 The purpose for writing this program is to make it to be able to learn sqlite and to be able to use python to write the program. I have used mysql but have not used sqlite so I wanted to try it. 
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of how created the Relational Database.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Movie Rater](https://www.youtube.com/watch?v=WsplQjdiHSI&t=32s)
 
 # Relational Database
 
